@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+
+  
+    <div id="bookmark" class="text-center py-5">
+        <div class="container">
+            <h1 class="mb-5">Bookmark</h1>
+            <hr class="dotted-line">
+            <p class="fw-bold mb-4"> <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i> </p>
+
+
+            <!-- Start of input -->
+            <div class="inputs text-start">
+                <label for="bookMarkName" class="form-label mb-2 fw-bold"><i class="fa-solid fa-book-bookmark mx-2"></i>Bookmark Name</label>
+                <input oninput="validateSiteName()" type="text" class="form-control mb-4" id="bookMarkName" placeholder="Bookmark Name" required>
+
+
+                <label for="siteUrl" class="form-label mb-2 fw-bold"><i class="fa-solid fa-link mx-2"></i>Website URL</label>
+                <input oninput="validateSiteUrl()" type ="text" class="form-control mb-4" id="siteUrl" placeholder="Website URL" required>
+            </div>
+            <!-- end of inputs -->
+
+            <button onclick="addBookMark()" class="btn btn-danger mb-3 mb-xl-4 px-xl-5 py-xl-2" type="submit">Submit</button>
+
+
+            <hr class="dotted-line">
+
+
+            <!-- start of table -->
+             <table class="text-center table table-hover table-striped ">
+                <thead>
+                
+                        <th>Index</th>
+                        <th>Site Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    
+                </thead>
+                <tbody id="tableBody">
+                    
+                </tbody>
+             </table>
+            <!-- end of table -->
+
+
+
+            <!-- Start of modal -->
+            <div id="validationModal" class="modal fade show d-none" tabindex="-1" role="dialog" aria-modal="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content text-start">
+                         <div class="modal-header">
+                            <p class="modal-title" id="validationModalLabel">
+                            <i class="fa-solid fa-circle text-danger"></i>
+                            <i class="fa-solid fa-circle text-warning"></i>
+                            <i class="fa-solid fa-circle text-success"></i>  
+                            </p>
+                            <button type="button" class="btn-close" aria-label="Close" onclick="document.getElementById('validationModal').classList.add('d-none')"></button>
+                        </div>
+                        <div class="modal-body">
+                            <span class="fw-bold fs-5">Site Name or Url is not valid, Please follow the rules below :</span>
+                            <p class="my-2 text-black "><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site name must contain at least 3 characters</p>
+                            <p class="my-2 text-black "><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site URL must be a valid one</p>
+                            <p class="my-2 text-black "><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site name and URL must not be duplicated</p>
+                          </div> 
+                    </div>
+                </div>
+            </div>
+            <!-- End of modal -->
+
+
+        </div> 
+    </div>
+
+    
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

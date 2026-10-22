@@ -1,0 +1,111 @@
+/* general */
+
+/* general */
+
+
+
+
+/* fonts */
+@font-face {
+    font-family: 'Pacifico';
+    src: url("../fonts/Pacifico/Pacifico-Regular.ttf")
+}
+/* fonts */
+
+
+
+
+body{
+    background-color: #F7ECDE; 
+}
+
+
+#bookmark h1 {
+    font-family: 'Pacifico';
+    width:fit-content;
+    position: relative;  
+    margin-inline: auto; 
+}
+
+#bookmark h1::after {
+    content: " ";
+    width: 100%;
+    height: 35%;
+    background-color: #FEC260;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: .3s  all;
+}
+
+#bookmark h1:hover::after {
+    height:70%
+}
+
+.dotted-line {
+    border: none;             
+    border-top: 3px dotted #000000;      
+}
+
+#bookmark p {
+    background: linear-gradient(90deg, rgba(63, 165, 92, 1) 0%, rgba(254, 194, 96, 1) 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+
+
+/* start of inputs */
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #d99c39;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+/* end of inputs */
+
+
+
+
+
+/* start of modal section  */
+#validationModal .modal-body span {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+#validationModal .modal-body p {
+    font-size: 14px;
+}
+/* end of modal section  */
+
+
+
+
+
+
+/* start of screen sizes */
+#bookmark {
+    container-type: inline-size;
+    container-name: bookmark-container;
+}
+
+@container bookmark-container (min-width: 768px) {
+    #validationModal .modal-body p {
+    font-size: 18px;
+}
+}
+
+@container bookmark-container (min-width: 1200px) {
+    #bookmark h1 {
+        font-size: 60px;
+    }
+    #bookmark p {
+        font-size: 22px;
+    }
+}
+/* end of screen sizes */
+
+
